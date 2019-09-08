@@ -67,7 +67,8 @@ ROBOTSTXT_OBEY = True
 ITEM_PIPELINES = {
    'tutorial.pipelines.QuotePipeline': 300,
    'tutorial.pipelines.SqlitePipeline': 200,
-   'tutorial.pipelines.MySQLPipeline': 100
+   'tutorial.pipelines.MySQLPipeline': 100,
+   'tutorial.pipelines.MongoDBPipeline': 50
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

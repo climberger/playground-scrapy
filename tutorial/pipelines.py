@@ -1,5 +1,6 @@
 import sqlite3
 import mysql.connector
+import pymongo
 
 class QuotePipeline(object):
     def process_item(self, item, spider):
@@ -62,4 +63,23 @@ class MySQLPipeline(object):
     def process_item(self, item, spider):
         print('Pipeline: Save item to MySQL database')
         self.store_to_db(item)
+        return item
+
+
+class MongoDBPipeline(object):
+
+    def __init__(self):
+        self.conn = pymongo.MongoClient(
+            host='localhost',
+            port=27017,
+            username='admin',
+            password='password'
+        )
+        db = self.conn['myquotes']
+        self.collection = db['quotes_db']
+
+    def process_item(self, item, spider):
+        print('Pipeline: Save item to MongoDB')
+        document = {"author": item['author'][0], "text": item['text'][0], "tags": item['tags'][0]}
+        self.collection.insert_one(document)
         return item
