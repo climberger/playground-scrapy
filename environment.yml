@@ -61,5 +61,5 @@ dependencies:
   - zlib=1.2.11=h62dcd97_3
   - zope=1.0=py37_1
   - zope.interface=4.6.0=py37he774522_0
-prefix: C:\Users\carst\Anaconda3\envs\Python_3.7_Scrapy
+prefix: C:\Users\<user>\Anaconda3\envs\Python_3.7_Scrapy
 
