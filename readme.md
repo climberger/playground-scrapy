@@ -3,11 +3,6 @@
 Following this tutorial:  
 https://www.youtube.com/playlist?list=PLhTjy8cBISEqkN-5Ku_kXG4QW33sxQo0t
 
-The crawler has three pipelines:
-* Print items to console
-* Save items to SQLite database
-* Save items to MySQL database
-
 Create Anaconda environment with the environment.yml: **conda env create -f environment.yml**
 
 Currently, a docker compose is used to deploy a MySQL instance. The mapped port used in the code is not the default MySQL port.
